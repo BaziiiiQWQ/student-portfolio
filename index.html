@@ -351,4 +351,60 @@ body.pause-motion .falling-layer span {
   document.body.appendChild(layer);
 })();
 </script>
+
+<style>
+.motion-toggle {
+  width: auto !important;
+  height: auto !important;
+  min-height: 34px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body.pause-motion .falling-layer,
+body.pause-motion .hero-spark {
+  display: none !important;
+}
+</style>
+
+<script>
+(() => {
+  const oldButton = document.getElementById('motionToggle');
+  if (!oldButton) return;
+
+  // 替换旧按钮，避免原来的图标切换代码干扰
+  const button = oldButton.cloneNode(true);
+  oldButton.replaceWith(button);
+
+  const words = {
+    zh: ['关闭动画效果', '开启动画效果'],
+    ko: ['애니메이션 끄기', '애니메이션 켜기'],
+    en: ['Turn animations off', 'Turn animations on']
+  };
+
+  function updateButton() {
+    const lang = document.querySelector('[data-lang].active')
+      ?.dataset.lang || 'zh';
+    const isPaused = document.body.classList.contains('pause-motion');
+
+    button.textContent = words[lang][isPaused ? 1 : 0];
+    button.title = button.textContent;
+    button.setAttribute('aria-label', button.textContent);
+  }
+
+  button.addEventListener('click', () => {
+    document.body.classList.toggle('pause-motion');
+    updateButton();
+  });
+
+  document.querySelectorAll('[data-lang]').forEach(item => {
+    item.addEventListener('click', updateButton);
+  });
+
+  updateButton();
+})();
+</script>  
 </body></html>
