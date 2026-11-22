@@ -72,13 +72,45 @@ dialog{width:min(670px,calc(100vw - 24px));max-height:85vh;overflow-y:auto;borde
 @media(max-width:1080px){.tool-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.journey-area{padding-left:55px;padding-right:55px}.journey-flower{opacity:.5}}
 @media(max-width:740px){.project-grid{grid-template-columns:1fr;gap:15px}.project-cover{height:122px}.project-body{min-height:0}.project-name{font-size:20px}.project-sum{min-height:0}.tool-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.tool{min-height:112px;padding:10px 3px}.tool strong{font-size:11px}.tool small{font-size:9px}.tool .symbol{width:35px;height:35px;font-size:20px}.journey-area{padding:15px 0}.journey-flower{display:none}.journey-item{grid-template-columns:minmax(78px,103px) 1fr auto;padding:8px 9px;gap:7px}.journey-item time{padding:0 4px;font-size:10px}.journey-item strong{font-size:11px}#contact .contact{padding:26px 23px}.envelope{opacity:.18!important}}
 @media(max-width:400px){.tool-grid{gap:6px}.tool small{font-size:8px}}
+
+/* SiYu guestbook: fully selectable HTML text; no text baked into images. */
+.guestbook-section{scroll-margin-top:125px;padding-top:38px}
+.guestbook-shell{position:relative;background:linear-gradient(150deg,#fffaf9,#ffeefa 75%,#fff9f4);border:1px solid #f1cbd8;border-radius:28px;box-shadow:0 13px 35px #c78aa028;padding:27px;overflow:hidden}
+.guestbook-shell:before{content:'🎀';position:absolute;right:30px;top:8px;font-size:35px;transform:rotate(12deg);opacity:.72;pointer-events:none}
+.guestbook-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.19em;color:#b05a7b;font-weight:800;margin-bottom:2px}
+.guestbook-shell h2{font-size:clamp(23px,4vw,34px);margin:2px 0;color:#9b4668}
+.guestbook-intro{color:#876571;max-width:690px;font-size:14px;margin:0 0 17px}
+.guestbook-layout{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(300px,1.15fr);gap:19px;align-items:start}
+.guestbook-write,.guestbook-read{background:#ffffffc9;border:1px solid #f0ced9;border-radius:20px;padding:19px;box-shadow:0 5px 13px #c590a014}
+.guestbook-write h3,.guestbook-read h3{margin:0 0 13px;color:#a64e72;font-size:17px}
+.guestbook-write label{display:block;font-size:12px;font-weight:700;color:#925971;margin:13px 0 5px}
+.guestbook-write input,.guestbook-write textarea{font:inherit;width:100%;display:block;color:#654451;background:#fff9f9;border:1px solid #ebcad6;border-radius:12px;padding:10px 12px;outline-offset:2px;resize:vertical}
+.guestbook-write textarea{min-height:110px;max-height:280px}
+.guestbook-write input:focus,.guestbook-write textarea:focus{border-color:#c16d90;outline:2px solid #f1b6cd}
+.guestbook-write button{margin-top:12px;width:100%;padding:11px 17px;border-radius:999px;background:linear-gradient(100deg,#e087aa,#be6288);border:1px solid #ba6182;color:white;font-weight:700;box-shadow:0 6px 16px #b45d8d35}
+.guestbook-write button:disabled{opacity:.65;cursor:wait}
+.guestbook-fineprint{font-size:11px;color:#997b87;margin-top:10px}
+.guestbook-count{font-size:12px;color:#aa788e}
+.guestbook-list{display:grid;gap:10px;margin-top:11px;max-height:520px;overflow-y:auto;padding-right:4px}
+.guestbook-note{padding:13px 14px;background:linear-gradient(130deg,#fff8f9,#ffedf3);border:1px solid #f2cfda;border-radius:15px;box-shadow:0 3px 8px #d9a0b117}
+.guestbook-note-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:5px}
+.guestbook-sample{background:linear-gradient(140deg,#fff9fb,#fff3ed);border-style:dashed}
+
+.guestbook-nickname{font-weight:800;color:#a24a6c;overflow-wrap:anywhere}
+.guestbook-date{font-size:11px;color:#a2808d;font-variant-numeric:tabular-nums}
+.guestbook-message{font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;color:#674e58;line-height:1.7}
+.guestbook-status{min-height:22px;font-size:12px;font-weight:650;color:#9c5572;margin:10px 0 0}
+.guestbook-refresh{border:1px solid #e6bacc;background:#fff6f9;color:#a25473;padding:6px 12px;border-radius:30px;font-size:11px}
+.guestbook-read-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+@media(max-width:750px){.guestbook-shell{padding:17px;border-radius:22px}.guestbook-layout{grid-template-columns:1fr}.guestbook-write,.guestbook-read{padding:14px}.guestbook-list{max-height:420px}}
+
 </style></head>
 <body>
 <a class="skip" href="#about">Skip to content</a>
 <div class="mini-ribbon">♡ &nbsp; SIYU'S LITTLE STUDIO · MADE WITH LOVE &amp; CURIOSITY &nbsp; ♡</div>
 <header class="mast"><div class="mast-wrap">
   <a class="logo" href="#home"><span class="seal">S</span><span class="logo-title script">SiYu's Little Studio ♡</span></a>
-  <nav class="nav" aria-label="Main navigation"><a href="#home" id="navHome" class="active">Home</a><a href="#about" id="navAbout">About</a><a href="#projects" id="navProjects">Projects</a><a href="#toolkit" id="navTool">Toolkit</a><a href="#journey" id="navJourney">Journey</a><a href="#contact" id="navContact">Contact</a></nav>
+  <nav class="nav" aria-label="Main navigation"><a href="#home" id="navHome" class="active">Home</a><a href="#about" id="navAbout">About</a><a href="#projects" id="navProjects">Projects</a><a href="#toolkit" id="navTool">Toolkit</a><a href="#journey" id="navJourney">Journey</a><a href="#contact" id="navContact">Contact</a><a href="#guestbook" id="navGuestbook">Guestbook</a></nav>
   <div class="language" role="group" aria-label="Languages"><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ko" class="active">한국어</button><button type="button" data-lang="en">English</button></div><button class="motion-toggle" id="motionToggle" aria-label="Pause motion" title="Pause motion">Ⅱ</button>
 </div></header>
 <main>
@@ -103,6 +135,34 @@ dialog{width:min(670px,calc(100vw - 24px));max-height:85vh;overflow-y:auto;borde
 <svg class="journey-flower journey-flower-right" viewBox="0 0 140 230" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="tulipPink" x2="1" y2="1"><stop stop-color="#ffe6ef"/><stop offset="1" stop-color="#e98cac"/></linearGradient></defs><g fill="none" stroke="#8daa7f" stroke-linecap="round" stroke-width="3"><path d="M70 211Q77 115 45 63M71 211Q79 126 91 35M71 211Q84 135 120 93"/><path d="M66 173Q37 157 35 139Q63 145 66 173M79 156Q101 139 119 142Q105 163 79 156M71 180Q91 175 111 185Q88 194 71 180" fill="#a0be92"/></g><g fill="url(#tulipPink)" stroke="#dd91a8" stroke-width="2"><path d="M34 63Q16 39 25 24Q39 31 44 48Q48 21 64 29Q72 53 48 75Q39 77 34 63Z"/><path d="M78 34Q67 14 80 5Q94 13 91 29Q99 6 111 15Q115 41 93 48Q84 46 78 34Z"/><path d="M108 93Q95 74 105 60Q119 63 120 82Q127 57 137 71Q144 93 123 105Q111 107 108 93Z"/></g></svg><div class="journey-list" id="journeyList"></div></div></section>
 <section id="contact" class="section" aria-labelledby="contactTitle"><div class="contact soft-card"><div class="contact-content"><div class="eyebrow" id="contactEye"></div><h2 id="contactTitle"></h2><p id="contactBody"></p><div class="contact-actions"><button id="emailCopy" class="pink-button" type="button">💌 Copy email</button><a class="outline-button" target="_blank" rel="noopener noreferrer" href="https://github.com/BaziiiiQWQ/student-portfolio" id="githubBtn">GitHub ↗</a></div><div class="email-line">maosiyu777@126.com</div></div><div class="envelope" aria-hidden="true"><div class="flap"></div><div class="shine">✧</div></div></div></section>
 </div>
+
+<section id="guestbook" class="section guestbook-section" aria-labelledby="guestbookTitle">
+  <div class="guestbook-shell">
+    <div class="guestbook-eyebrow">06 · LITTLE GUESTBOOK ♡</div>
+    <h2 id="guestbookTitle">小纸条留言板 ♡</h2>
+    <p class="guestbook-intro" id="guestbookIntro"></p>
+    <div class="guestbook-layout">
+      <form id="guestbookForm" class="guestbook-write">
+        <h3 id="guestbookWriteTitle"></h3>
+        <label for="guestbookName" id="guestbookNameLabel"></label>
+        <input id="guestbookName" name="nickname" maxlength="24" required autocomplete="nickname" placeholder="你的昵称" />
+        <label for="guestbookText" id="guestbookTextLabel"></label>
+        <textarea id="guestbookText" name="message" maxlength="300" required placeholder="写一张小纸条吧 ♡"></textarea>
+        <div class="guestbook-fineprint" id="guestbookPrivacy"></div>
+        <input type="text" name="website" tabindex="-1" aria-hidden="true" autocomplete="off" style="position:absolute;left:-9999px" />
+        <button type="submit" id="guestbookSubmit"></button>
+        <p id="guestbookSubmitStatus" class="guestbook-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="guestbook-read" aria-live="polite">
+        <div class="guestbook-read-head"><h3 id="guestbookReadTitle"></h3><button class="guestbook-refresh" type="button" id="guestbookRefresh"></button></div>
+        <div class="guestbook-count" id="guestbookCount"></div>
+        <div class="guestbook-list" id="guestbookList"></div>
+        <p class="guestbook-status" id="guestbookLoadStatus" role="status"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main><footer class="footer"><div class="script">SiYu's Little Studio ♡</div><small>Still learning, still growing. ♡</small><small>© 2026 Mao SiYu · Made with ChatGPT</small></footer>
 <dialog id="detailDialog" aria-labelledby="dialogTitle"><button type="button" class="dialog-close" id="closeDialog" aria-label="Close">×</button><div class="dialog-tag" id="dialogTag"></div><h3 id="dialogTitle"></h3><div id="dialogBody"></div></dialog>
 <div id="toast" role="status" aria-live="polite" class="toast"></div>
@@ -140,4 +200,83 @@ async function copyEmail(){const v='maosiyu777@126.com';let success=false;try{if
 $('emailCopy').addEventListener('click',copyEmail);
 const nav=document.querySelectorAll('.nav a');nav.forEach(a=>a.addEventListener('click',()=>{nav.forEach(n=>n.classList.remove('active'));a.classList.add('active')}));
 render();
-</script></body></html>
+</script>
+<script>
+(() => {
+  'use strict';
+  const $g = id => document.getElementById(id);
+  const ui = {
+    zh: {nav:'留言板',title:'思雨的访客留言簿 ♡',intro:'把想说的话留在这里吧！每一张小纸条都会公开展示，其他朋友也能看见。💌',write:'留下一张小纸条 🎀',name:'怎么称呼你？',msg:'想对思雨说什么？',namePH:'你的昵称',msgPH:'在这里写下想说的话 ♡',privacy:'♡ 留言会公开。请不要填写手机号、住址或其他隐私信息。',submit:'留下小纸条 ♡',read:'大家留下的小心意',refresh:'刷新留言 ↻',loading:'正在打开留言簿…',empty:'还没有留言，来做第一个写小纸条的人吧！',sent:'小纸条贴上去啦！大家都能看见 ♡',failed:'暂时无法加载留言。请确认数据库已经连接好。',invalid:'昵称和留言都要填写哦。',throttle:'留言太频繁啦，稍后再试 ♡',count:n=>`最近 ${n} 条留言`},
+    ko: {nav:'방명록',title:'SiYu의 작은 방명록 ♡',intro:'짧은 메시지를 남겨 주세요! 여러분이 남긴 글은 다른 방문자에게도 공개됩니다. 💌',write:'작은 메시지 남기기 🎀',name:'어떻게 불러 드릴까요?',msg:'SiYu에게 전하고 싶은 말',namePH:'닉네임',msgPH:'메시지를 남겨 주세요 ♡',privacy:'♡ 공개 방명록입니다. 전화번호, 주소 등 개인정보를 적지 마세요.',submit:'메시지 남기기 ♡',read:'친구들의 작은 메시지',refresh:'새로고침 ↻',loading:'방명록을 불러오는 중…',empty:'아직 메시지가 없어요. 첫 메시지를 남겨 주세요!',sent:'메시지가 등록됐어요! 모두에게 보여요 ♡',failed:'방명록을 불러올 수 없습니다. 데이터베이스 연결을 확인해 주세요.',invalid:'닉네임과 메시지를 모두 입력해 주세요.',throttle:'잠시 후 다시 남겨 주세요 ♡',count:n=>`최근 메시지 ${n}개`},
+    en: {nav:'Guestbook',title:"SiYu's Little Guestbook ♡",intro:'Leave a little note! Your message will be publicly visible to everyone who visits. 💌',write:'Leave a sweet note 🎀',name:'What should I call you?',msg:'What would you like to say?',namePH:'Your nickname',msgPH:'Write a little note ♡',privacy:'♡ Messages are public. Please do not post phone numbers, addresses, or private information.',submit:'Post my little note ♡',read:'Notes from friends',refresh:'Refresh ↻',loading:'Opening the guestbook…',empty:'No notes yet. Be the first to leave one!',sent:'Your little note is up! Everyone can see it ♡',failed:'The guestbook is not available yet. Please check the database setup.',invalid:'Please enter your nickname and a message.',throttle:'Too many notes. Please try again later ♡',count:n=>`${n} recent notes`}
+  };
+  const samples = [
+    { nickname: 'Thesky', messages: { zh: '广告位招租', ko: '광고 자리 임대 중', en: 'Ad space available' } },
+    { nickname: 'DANDAN', messages: { zh: '小巴牛逼克拉斯不解释', ko: '샤오바 최고! 설명은 필요 없어', en: 'Xiaoba is legendary. No explanation needed.' } },
+    { nickname: 'Caigou', messages: { zh: 'qssj', ko: 'qssj', en: 'qssj' } }
+  ];
+  const origin = location.hostname.endsWith('github.io') ? 'https://student-portfolio-dh4.pages.dev' : '';
+  const api = origin + '/api/guestbook';
+  const current = () => ui[typeof lang==='string' && ui[lang] ? lang : 'ko'];
+  const keys = {navGuestbook:'nav',guestbookTitle:'title',guestbookIntro:'intro',guestbookWriteTitle:'write',guestbookNameLabel:'name',guestbookTextLabel:'msg',guestbookPrivacy:'privacy',guestbookSubmit:'submit',guestbookReadTitle:'read',guestbookRefresh:'refresh'};
+  let cache = [];
+  function labels(){
+    const d=current();
+    for(const [id,key] of Object.entries(keys)) $g(id).textContent=d[key];
+    $g('guestbookName').placeholder=d.namePH;
+    $g('guestbookText').placeholder=d.msgPH;
+    $g('guestbookCount').textContent=d.count(cache.length);
+
+  }
+  function display(){
+    const list=$g('guestbookList'); list.replaceChildren();
+    cache.forEach(x=>{
+      const article=document.createElement('article');article.className='guestbook-note';
+      const head=document.createElement('div');head.className='guestbook-note-head';
+      const who=document.createElement('strong');who.className='guestbook-nickname';who.textContent='♡ '+x.nickname;
+      const when=document.createElement('time');when.className='guestbook-date';when.textContent=x.created_at || '';
+      const body=document.createElement('p');body.className='guestbook-message';body.textContent=x.message;
+      head.append(who,when); article.append(head,body);list.append(article);
+    });
+    // These three are explicitly labeled previews; never present them as real public submissions.
+    const language = (typeof lang === 'string' && ui[lang]) ? lang : 'ko';
+    const previewLabel = {zh:'展示样例',ko:'디자인 예시',en:'Design sample'}[language];
+    samples.forEach(sample => {
+      const article=document.createElement('article');article.className='guestbook-note guestbook-sample';
+      const head=document.createElement('div');head.className='guestbook-note-head';
+      const who=document.createElement('strong');who.className='guestbook-nickname';who.textContent='♡ '+sample.nickname;
+      const when=document.createElement('span');when.className='guestbook-date';when.textContent=previewLabel;
+      const body=document.createElement('p');body.className='guestbook-message';body.textContent=sample.messages[language];
+      head.append(who,when);article.append(head,body);list.append(article);
+    });
+    $g('guestbookCount').textContent=current().count(cache.length);
+    $g('guestbookLoadStatus').textContent='';
+  }
+  async function reload(){
+    $g('guestbookLoadStatus').textContent=current().loading;
+    try{
+      const r=await fetch(api+'?limit=30',{cache:'no-store'});
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      const j=await r.json();if(!Array.isArray(j.messages))throw new Error('bad data');
+      cache=j.messages;display();
+    }catch(e){$g('guestbookLoadStatus').textContent=current().failed;}
+  }
+  $g('guestbookForm').addEventListener('submit', async event=>{
+    event.preventDefault();const d=current();
+    const nickname=$g('guestbookName').value.trim();const message=$g('guestbookText').value.trim();
+    const out=$g('guestbookSubmitStatus');if(!nickname||!message){out.textContent=d.invalid;return;}
+    const button=$g('guestbookSubmit');button.disabled=true;
+    try{
+      const r=await fetch(api,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({nickname,message,website:$g('guestbookForm').elements.website.value})});
+      if(r.status===429){out.textContent=d.throttle;return;}
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      $g('guestbookText').value='';out.textContent=d.sent;await reload();
+    }catch(e){out.textContent=d.failed;}
+    finally{button.disabled=false;}
+  });
+  $g('guestbookRefresh').addEventListener('click',reload);
+  document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{labels();display();}));
+  labels();display();reload();
+})();
+</script>
+</body></html>
