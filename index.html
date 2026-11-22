@@ -279,4 +279,76 @@ render();
   labels();display();reload();
 })();
 </script>
+  
+<style>
+.falling-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.falling-layer span {
+  position: absolute;
+  top: -8vh;
+  left: var(--left);
+  font-size: var(--size);
+  opacity: 0;
+  animation: fallDown var(--time) linear var(--delay) infinite;
+  will-change: transform;
+  filter: drop-shadow(0 2px 3px #ffffff99);
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translate(0, -10vh) rotate(0deg);
+    opacity: 0;
+  }
+  10%, 85% {
+    opacity: .65;
+  }
+  100% {
+    transform: translate(var(--drift), 120vh) rotate(300deg);
+    opacity: 0;
+  }
+}
+
+body.pause-motion .falling-layer span {
+  animation: fallDown var(--time) linear var(--delay) infinite !important;
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .falling-layer { display: none; }
+}
+</style>
+
+<script>
+(() => {
+  const layer = document.createElement('div');
+  layer.className = 'falling-layer';
+  layer.setAttribute('aria-hidden', 'true');
+
+  const icons = ['🌸', '🌸', '♡', '✧', '💗'];
+
+  const count = window.innerWidth < 640 ? 12 : 24;
+
+  for (let i = 0; i < count; i++) {
+    const item = document.createElement('span');
+    const duration = 12 + Math.random() * 11;
+
+    item.textContent = icons[Math.floor(Math.random() * icons.length)];
+    item.style.setProperty('--left', Math.random() * 100 + '%');
+    item.style.setProperty('--size', (14 + Math.random() * 11) + 'px');
+    item.style.setProperty('--time', duration + 's');
+    item.style.setProperty('--delay', -Math.random() * duration + 's');
+    item.style.setProperty('--drift', (Math.random() * 160 - 80) + 'px');
+
+    layer.appendChild(item);
+  }
+
+  document.body.appendChild(layer);
+})();
+</script>
 </body></html>
